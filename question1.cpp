@@ -1,23 +1,27 @@
 #include <iostream>
 using namespace std;
- 
-int search(int arr[], int N, int x)
-{
-    int i;
-    for (i = 0; i < N; i++)
-        if (arr[i] == x)
-            return i;
-    return -1;
-}
 
-int main(void)
-{
-    int arr[] = { 2, 3, 4, 10, 40 };
-    int x = 10;
-    int N = sizeof(arr) / sizeof(arr[0]);
-    int result = search(arr, N, x);
-    (result == -1)
-        cout << "present" << endl;
-        cout << "present at inedx " << result;
+int main() {
+    int arr[] = {2, 5, 7, 9, 11};
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    int key = 7;
+    bool found = false; 
+    int comparisons = 0;
+
+    for (int i = 0; i < n; i++) {
+        comparisons++; 
+        if (arr[i] == key) {
+            found = true; 
+            break;
+        }
+    }
+
+    if (found) {
+        cout << key << " is present in the array." << endl;
+    } else {
+        cout << key << " is not present in the array." << endl;
+    }
+    cout << "Total number of comparisons: " << comparisons << endl;
+
     return 0;
 }
